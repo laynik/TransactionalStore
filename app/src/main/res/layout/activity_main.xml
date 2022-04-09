@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_set"
+        style="@style/BaseButton"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="@dimen/btn_height"
+        android:text="@string/set_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_set_key"
+        style="@style/BaseEditText"
+        android:layout_width="@dimen/et_width"
+        android:layout_height="0dp"
+        android:hint="@string/key_hidden"
+        app:layout_constraintBottom_toBottomOf="@id/btn_set"
+        app:layout_constraintStart_toEndOf="@id/btn_set" />
+
+    <EditText
+        android:id="@+id/et_set_value"
+        style="@style/BaseEditText"
+        android:layout_width="@dimen/et_width"
+        android:layout_height="0dp"
+        android:hint="@string/value_hidden"
+        app:layout_constraintBottom_toBottomOf="@id/btn_set"
+        app:layout_constraintStart_toEndOf="@id/et_set_key" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_get"
+        style="@style/BaseButton"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="@dimen/btn_height"
+        android:text="@string/get_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_set" />
+
+    <EditText
+        android:id="@+id/et_get_key"
+        style="@style/BaseEditText"
+        android:layout_width="@dimen/et_width"
+        android:layout_height="0dp"
+        android:hint="@string/key_hidden"
+        app:layout_constraintBottom_toBottomOf="@id/btn_get"
+        app:layout_constraintStart_toEndOf="@id/btn_get" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_delete"
+        style="@style/BaseButton"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="@dimen/btn_height"
+        android:text="@string/delete_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_get" />
+
+    <EditText
+        android:id="@+id/et_delete_key"
+        style="@style/BaseEditText"
+        android:layout_width="@dimen/et_width"
+        android:layout_height="0dp"
+        android:hint="@string/key_hidden"
+        app:layout_constraintBottom_toBottomOf="@id/btn_delete"
+        app:layout_constraintStart_toEndOf="@id/btn_delete" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_count"
+        style="@style/BaseButton"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="@dimen/btn_height"
+        android:text="@string/count_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_delete" />
+
+    <EditText
+        android:id="@+id/et_count_value"
+        style="@style/BaseEditText"
+        android:layout_width="@dimen/et_width"
+        android:layout_height="0dp"
+        android:hint="@string/value_hidden"
+        app:layout_constraintBottom_toBottomOf="@id/btn_count"
+        app:layout_constraintStart_toEndOf="@id/btn_count" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_begin"
+        style="@style/BaseButton"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="@dimen/btn_height"
+        android:text="@string/begin_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_count" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_commit"
+        style="@style/BaseButton"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="@dimen/btn_height"
+        android:text="@string/commit_name"
+        app:layout_constraintStart_toEndOf="@id/btn_begin"
+        app:layout_constraintTop_toBottomOf="@id/btn_count" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_rollback"
+        style="@style/BaseButton"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="@dimen/btn_height"
+        android:text="@string/rollback_name"
+        app:layout_constraintStart_toEndOf="@id/btn_commit"
+        app:layout_constraintTop_toBottomOf="@id/btn_count" />
+
+    <TextView
+        android:id="@+id/tv_output"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:scrollbars="vertical"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_begin" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
