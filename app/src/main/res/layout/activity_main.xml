@@ -113,15 +113,34 @@
         app:layout_constraintTop_toBottomOf="@id/btn_count" />
 
     <TextView
-        android:id="@+id/tv_output"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/tv_output_portrait"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_margin="16dp"
+        android:ellipsize="end"
+        android:gravity="bottom"
         android:scrollbars="vertical"
         android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_begin" />
+
+    <TextView
+        android:id="@+id/tv_output_landscape"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:ellipsize="end"
+        android:gravity="bottom"
+        android:scrollbars="vertical"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_rollback"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
