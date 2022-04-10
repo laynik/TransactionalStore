@@ -33,7 +33,6 @@ object DataSource {
     }
 
     fun getData() = versions.last()
-
 }
 
 data class DataStorage(

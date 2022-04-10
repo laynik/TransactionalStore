@@ -19,8 +19,8 @@ class TransactionViewModel(
     val uiState: StateFlow<TransUiState> = _uiState
 
     override fun onCleared() {
-        super.onCleared()
         bgScope.cancel()
+        super.onCleared()
     }
 
     private fun validData(data: String) = data.isNotEmpty()
