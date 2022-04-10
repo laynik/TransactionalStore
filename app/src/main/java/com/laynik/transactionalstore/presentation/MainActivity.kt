@@ -55,6 +55,12 @@ class MainActivity : AppCompatActivity() {
         tvOutputLandscape = findViewById(R.id.tv_output_landscape)
         tvOutputPortrait.movementMethod = ScrollingMovementMethod()
         tvOutputLandscape.movementMethod = ScrollingMovementMethod()
+        setupListeners()
+        setupOutput(transactionViewModel.getHistory())
+        setupFlow()
+    }
+
+    private fun setupListeners() {
         btnSet.clickWithHide {
             transactionViewModel.onSetClickListener(
                 etSetKey.text.toString(),
@@ -67,6 +73,10 @@ class MainActivity : AppCompatActivity() {
         btnBegin.clickWithHide { transactionViewModel.onBeginClickListener() }
         btnCommit.clickWithHide { transactionViewModel.onCommitClickListener() }
         btnRollback.clickWithHide { transactionViewModel.onRollbackClickListener() }
+
+    }
+
+    private fun setupFlow() {
         lifecycleScope.launchWhenStarted {
             transactionViewModel.uiState.collectLatest {
                 when (it) {
@@ -82,7 +92,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-        setupOutput(transactionViewModel.getHistory())
     }
 
     private fun appendData(data: String) {
@@ -120,5 +129,4 @@ class MainActivity : AppCompatActivity() {
         val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
         inputMethodManager.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
     }
-
 }
