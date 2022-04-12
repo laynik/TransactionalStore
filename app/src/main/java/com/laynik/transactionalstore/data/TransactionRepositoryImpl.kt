@@ -5,9 +5,9 @@ import com.laynik.transactionalstore.domain.ResponseState
 import com.laynik.transactionalstore.domain.SuccessState
 import com.laynik.transactionalstore.domain.TransactionRepository
 
-class TransactionRepositoryImpl(
-    private val dataSource: DataSource
-) : TransactionRepository {
+class TransactionRepositoryImpl : TransactionRepository {
+
+    private val dataSource: DataSource = DataSource
     override fun setValue(key: String, value: String): ResponseState {
         decValueCount(key)
         val oldCnt = dataSource.getData().valueMap.getOrDefault(value, 0)

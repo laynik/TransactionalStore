@@ -14,13 +14,11 @@ import androidx.lifecycle.lifecycleScope
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.snackbar.Snackbar
 import com.laynik.transactionalstore.R
-import com.laynik.transactionalstore.data.DataSource
-import com.laynik.transactionalstore.data.TransactionRepositoryImpl
 import kotlinx.coroutines.flow.collectLatest
 
 class MainActivity : AppCompatActivity() {
 
-    private val transactionViewModel = TransactionViewModel(TransactionRepositoryImpl(DataSource))
+    private val transactionViewModel = TransactionViewModel()
     private lateinit var btnSet: MaterialButton
     private lateinit var btnGet: MaterialButton
     private lateinit var btnDelete: MaterialButton

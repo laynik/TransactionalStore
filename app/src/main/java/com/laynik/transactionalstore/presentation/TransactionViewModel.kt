@@ -2,6 +2,7 @@ package com.laynik.transactionalstore.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.laynik.transactionalstore.data.TransactionRepositoryImpl
 import com.laynik.transactionalstore.domain.ErrorState
 import com.laynik.transactionalstore.domain.ResponseState
 import com.laynik.transactionalstore.domain.SuccessState
@@ -10,10 +11,9 @@ import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
-class TransactionViewModel(
-    private val repository: TransactionRepository
-) : ViewModel(), ButtonClickListeners {
+class TransactionViewModel : ViewModel(), ButtonClickListeners {
 
+    private val repository: TransactionRepository = TransactionRepositoryImpl()
     private val bgScope = CoroutineScope(Dispatchers.Default + SupervisorJob())
     private val _uiState = MutableStateFlow<TransUiState>(WaitingState)
     val uiState: StateFlow<TransUiState> = _uiState
@@ -134,6 +134,6 @@ class TransactionViewModel(
 }
 
 sealed class TransUiState
-object WaitingState: TransUiState()
+object WaitingState : TransUiState()
 data class SuccessUiState(val data: String) : TransUiState()
 data class ErrorUiState(val data: String) : TransUiState()
